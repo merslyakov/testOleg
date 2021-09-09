@@ -17,9 +17,10 @@ closePop.onclick = () => {
 document.querySelector('.active-spin').onclick = () => {
 	document.querySelector('.wheel-img').classList.add('super-rotation')
 	setTimeout(() => {
-		spin.style.display = 'block', 6350;
+		spin.style.display = 'block'
 		window.localStorage.setItem('wheel', true);
-	});
+	}, 6350);
+
 };
 
 //============= href ==============
