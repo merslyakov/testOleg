@@ -1,5 +1,7 @@
 let spin = document.querySelector('.spin-result-wrapper');
 let closePop = document.querySelector('.close-popup');
+let popBtn = document.querySelector('.pop-up-button');
+let spinWrap = document.querySelector('.spin-wrapper');
 let text = document.querySelectorAll('input[type="text"]');
 let orderBlock = document.querySelector('.order_block');
 var start, diff, minutes, seconds, oldProd, rand, count;
@@ -8,8 +10,12 @@ for (let a of text) {
 	a.addEventListener('focus', () => a.value = "");
 }
 
-closePop.onclick = () => {
+closePop.onclick = () => popupClose();
+popBtn.onclick = () => popupClose();
+
+function popupClose() {
 	spin.style.display = 'none';
+	spinWrap.style.display = 'none';
 	orderBlock.style.display = 'block';
 	timerOn();
 }
@@ -28,6 +34,7 @@ let ahref = document.getElementsByTagName('a');
 if (window.localStorage.getItem('wheel')) {
 	for (let i of ahref) {
 		i.href = '#form';
+		spinWrap.style.display = 'none';
 		orderBlock.style.display = 'block';
 	}
 } else {
