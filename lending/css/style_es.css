@@ -2400,28 +2400,28 @@ section.section--grey>* {
     z-index: 1
 }
 
-.cards--grid-2 {
+.cards--grid-2 .slider__line {
     display: grid;
     position: relative;
     z-index: 0
 }
 
 @media screen and (min-width: 992px) {
-    .cards--grid-2 {
+    .cards--grid-2 .slider__line {
         grid-template-columns: 1fr 1fr;
         grid-gap: 2rem
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-    .cards--grid-2 {
+    .cards--grid-2 .slider__line {
         grid-template-columns: 1fr 1fr;
         grid-gap: 2rem
     }
 }
 
 @media screen and (max-width: 767px) {
-    .cards--grid-2 {
+    .cards--grid-2 .slider__line {
         grid-template-columns: 1fr;
         grid-gap: 1rem
     }
@@ -2612,29 +2612,29 @@ section.section--grey>* {
     }
 }
 
-.cards--grid-2 .card--grey,
-.cards--grid-2 .card--blue {
+.cards--grid-2 .slider__line .card--grey,
+.cards--grid-2 .slider__line .card--blue {
     -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)
 }
 
 @media screen and (min-width: 992px) {
-    .cards--grid-2 .card--grey,
-    .cards--grid-2 .card--blue {
+    .cards--grid-2 .slider__line .card--grey,
+    .cards--grid-2 .slider__line .card--blue {
         padding: 2.5rem
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-    .cards--grid-2 .card--grey,
-    .cards--grid-2 .card--blue {
+    .cards--grid-2 .slider__line .card--grey,
+    .cards--grid-2 .slider__line .card--blue {
         padding: 2rem
     }
 }
 
 @media screen and (max-width: 767px) {
-    .cards--grid-2 .card--grey,
-    .cards--grid-2 .card--blue {
+    .cards--grid-2 .slider__line .card--grey,
+    .cards--grid-2 .slider__line .card--blue {
         padding: 1.5rem
     }
 }
@@ -4336,29 +4336,59 @@ html[lang="es"] .cookie-bar__btn {
     position: relative
 }
 
-#sectionHowItWorks .cards--grid-2 {
+#sectionHowItWorks .cards--grid-2 .slider__line {
     margin: 3rem 0 -6rem
 }
 
+/* /////////////////////////////////////////////////////// slider //////////////////////////////////////// */
+
 @media screen and (max-width: 1199px) {
-    #sectionHowItWorks .cards--grid-2 {
+    #sectionHowItWorks .cards--grid-2 .slider__line {
 		display: block;
-		position: relative;
 	}
-	 .blue {
-		z-index: -1;
-		position: absolute;
-		top: 5%;
-		left: 0;
-		opacity: 0.2;
-		margin-bottom: 3rem;
-	}
-	
-	.blue_op{
-			animation: animationSlide 2s ease; 
-	}
+
+.slider {
+    max-width: 95%;
+    margin: 20px auto;
+	 position: relative;
 }
 
+.slider__line{
+    display: flex;
+	 flex-direction: row;
+    position: relative;
+    left: 0;
+    transition: all ease 2s;
+}
+
+.slider_item {
+	margin: 0 10px;
+}
+.btn__slide {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	top: 40%;
+	border-radius: 50%;
+	background-color: orange;
+	border: none;
+	box-shadow: 0 0 0 0.25em rgba(0, 0, 0, 0.05);
+	opacity: 0;
+}
+
+.btn_slide:hover {
+	background-color: rgb(230, 171, 64);
+}
+
+.slider-prev{
+	left: -15px;
+}
+
+.slider-next{
+	right: -15px;
+}
+
+}
 
 @keyframes animationSlide{
 	0%{
@@ -4373,21 +4403,21 @@ html[lang="es"] .cookie-bar__btn {
 }
 
 @media screen and (max-width: 599px) {
-    #sectionHowItWorks .cards--grid-2 {
+    #sectionHowItWorks .cards--grid-2 .slider__line {
         grid-gap: 2rem
     }
 }
 
-#sectionHowItWorks .cards--grid-2 [class^="card"] {
+#sectionHowItWorks .cards--grid-2 .slider__line [class^="card"] {
     padding: 1.5rem 2rem
 }
 
 @media screen and (min-width: 600px) {
-    #sectionHowItWorks .cards--grid-2 [class^="card"] {
+    #sectionHowItWorks .cards--grid-2 .slider__line [class^="card"] {
         border-right: 10rem solid #47bef2;
         border-top: 0
     }
-    #sectionHowItWorks .cards--grid-2 [class^="card"]::before {
+    #sectionHowItWorks .cards--grid-2 .slider__line [class^="card"]::before {
         content: "";
         display: block;
         background-image: url("../img/mesh.png");
@@ -4404,10 +4434,10 @@ html[lang="es"] .cookie-bar__btn {
 }
 
 @media screen and (max-width: 599px) {
-    #sectionHowItWorks .cards--grid-2 [class^="card"] {
+    #sectionHowItWorks .cards--grid-2 .slider__line [class^="card"] {
         border-top: 3rem solid #47bef2
     }
-    #sectionHowItWorks .cards--grid-2 [class^="card"]::before {
+    #sectionHowItWorks .cards--grid-2 .slider__line [class^="card"]::before {
         content: "";
         display: block;
         background-image: url("../img/mesh.png");
